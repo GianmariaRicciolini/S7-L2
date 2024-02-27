@@ -7,14 +7,15 @@ const submittedValue = document.getElementById("submitted");
 
 saveButton.addEventListener("click", function () {
   const submittedName = savedName.value;
-  updateName();
-
   localStorage.setItem("userName", submittedName);
+  updateName();
+  savedName.value = "";
 });
 
 deleteButton.addEventListener("click", function () {
   localStorage.removeItem("userName");
   updateName();
+  savedName.value = "";
 });
 
 function updateName() {
