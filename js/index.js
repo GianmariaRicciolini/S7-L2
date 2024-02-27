@@ -1,4 +1,5 @@
 // prima richiesta
+
 const savedName = document.getElementById("name");
 const saveButton = document.getElementById("save");
 const deleteButton = document.getElementById("delete");
@@ -27,5 +28,25 @@ function updateName() {
     submittedValue.innerText = "";
   }
 }
-
+// la richiamo in mod da visualizzare il nome, se presente, all'avvio della pagina
 updateName();
+
+// seconda richiesta
+
+const timeOnTimer = document.getElementById("timer");
+
+function startTimer() {
+  let seconds = sessionStorage.getItem("time");
+
+  function updateTime() {
+    seconds++;
+    timeOnTimer.textContent = seconds;
+    sessionStorage.setItem("time", seconds);
+  }
+
+  updateTime();
+
+  setInterval(updateTime, 1000);
+}
+
+startTimer();
