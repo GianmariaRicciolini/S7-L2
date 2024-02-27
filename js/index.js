@@ -36,7 +36,7 @@ updateName();
 const timeOnTimer = document.getElementById("timer");
 
 function startTimer() {
-  let seconds = sessionStorage.getItem("time");
+  let seconds = sessionStorage.getItem("time") || 0;
 
   function updateTime() {
     seconds++;
